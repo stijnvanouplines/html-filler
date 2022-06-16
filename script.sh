@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd "$(dirname "$0")"
+
 while IFS=',' read -r NAME FUNCTION PHONE EMAIL
 do
     FILENAME="${NAME// /-}.html"

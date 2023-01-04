@@ -8,8 +8,8 @@ do
 
     mkdir -p export && cp -v template.html export/$FILENAME &> /dev/null
 
-    sed -i "" "s/{NAME}/$NAME/g" export/$FILENAME
-    sed -i "" "s/{FUNCTION}/$FUNCTION/g" export/$FILENAME
-    sed -i "" "s/{PHONE}/$PHONE/g" export/$FILENAME
-    sed -i "" "s/{EMAIL}/$EMAIL/g" export/$FILENAME
+    sed -i "" "s/%NAME%/${NAME//&/\\&}/g" export/$FILENAME
+    sed -i "" "s/%FUNCTION%/${FUNCTION//&/\\&}/g" export/$FILENAME
+    sed -i "" "s/%PHONE%/${PHONE//&/\\&}/g" export/$FILENAME
+    sed -i "" "s/%EMAIL%/${EMAIL//&/\\&}/g" export/$FILENAME
 done < data.csv
